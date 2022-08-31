@@ -53,12 +53,11 @@ Before flashing, the system needs to boot with the kernel parameter
 * Then flash the new image with:
 
 ```sh
-flash: build/coreboot_top_prepared_12mb.rom layout.txt
-	flashrom \
-		--force \
-		--noverify-all\
-		-p internal \
-		--layout layout.txt \
-		--image bios \
-		-w build/coreboot_top_prepared_12mb.rom
+flashrom \
+    --force \
+    --noverify-all\
+    -p internal \
+    --layout layout.txt \
+    --image bios \
+    -w build/coreboot_top_prepared_12mb.rom
 ```
