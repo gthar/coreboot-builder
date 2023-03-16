@@ -1,16 +1,15 @@
-CONFIG=free-defconfig-d5c31acee4
-SDK_VERSION=2022-04-04_9a8d0a03db
-BOOTSPLASH=bootsplash.jpg
-# BOOTORDER=bootorder
-REPO_URL=https://github.com/coreboot/coreboot.git
-COMMIT=d5c31acee4
+COMMIT=db4b71ff10
+SDK_VERSION=2022-12-18_3b32af950d
 
+CONFIG=free-defconfig-$(COMMIT)
+BOOTSPLASH=bootsplash.jpg
+
+REPO_URL=https://github.com/coreboot/coreboot.git
 COREBOOT_CONFIG=coreboot/.config
 BUILDER=./coreboot-sdk.sh \
 		--config $(CONFIG) \
 		--sdk-version $(SDK_VERSION) \
 		--bootsplash $(BOOTSPLASH)
-#--bootorder $(BOOTORDER)
 
 .PHONY: clean nuke defconfig checkout flash
 

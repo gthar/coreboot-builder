@@ -8,9 +8,6 @@ while :; do
         --sdk-version)
             SDK_VERSION="$2"
             shift 2;;
-        --bootorder)
-            BOOTORDER="$2"
-            shift 2;;
         --bootsplash)
             BOOTSPLASH="$2"
             shift 2;;
@@ -31,5 +28,3 @@ docker run --rm -it \
     -v "$(pwd)/${BOOTSPLASH}:/home/coreboot/cb_build/bootsplash.jpg:ro" \
     coreboot/coreboot-sdk:"$SDK_VERSION" \
     "$@"
-
-#    -v "$(pwd)/${BOOTORDER}:/home/coreboot/cb_build/bootorder:ro" \
