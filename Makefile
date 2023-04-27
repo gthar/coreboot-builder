@@ -1,7 +1,7 @@
 COMMIT=db4b71ff10
 SDK_VERSION=2022-12-18_3b32af950d
 
-CONFIG=free-defconfig-$(COMMIT)
+CONFIG=nonfree-defconfig-$(COMMIT)
 BOOTSPLASH=bootsplash.jpg
 
 REPO_URL=https://github.com/coreboot/coreboot.git
@@ -23,7 +23,7 @@ build/coreboot_top.rom.sha256: build/coreboot_top.rom
 build/coreboot_top.rom: build/coreboot.rom
 	dd if="$<" of="$@" bs=1M skip=8
 
-build/coreboot.rom: $(COREBOOT_CONFIG) $(BOOTSPLASH) $(bootorder)
+build/coreboot.rom: $(COREBOOT_CONFIG) $(BOOTSPLASH) vgabios.bin
 	mkdir -p build
 	$(BUILDER) make
 
